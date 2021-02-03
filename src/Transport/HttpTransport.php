@@ -108,7 +108,9 @@ class HttpTransport implements TransportInterface
      */
     protected function createHttpClient()
     {
-        return new Client();
+        return new Client([
+            'verify' => '/usr/local/share/ca-certificates/Yandex/YandexInternalRootCA.crt'
+        ]);
     }
 
     /**
